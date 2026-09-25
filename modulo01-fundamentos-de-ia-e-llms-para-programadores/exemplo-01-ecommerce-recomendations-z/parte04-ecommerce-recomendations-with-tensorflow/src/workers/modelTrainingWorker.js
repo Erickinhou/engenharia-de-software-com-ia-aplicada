@@ -288,6 +288,7 @@ async function trainModel({ users }) {
     const products = await (await fetch('/data/products.json')).json()
 
     const context = makeContext(products, users)
+    debugger;
     context.productVectors = products.map(product => {
         return {
             name: product.name,
