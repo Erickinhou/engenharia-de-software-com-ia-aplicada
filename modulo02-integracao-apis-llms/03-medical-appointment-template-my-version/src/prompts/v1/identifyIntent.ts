@@ -1,10 +1,10 @@
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
 export const IntentSchema = z.object({
   intent: z.enum(['schedule', 'cancel', 'unknown']).describe('The user intent'),
-  professionalId: z.number().optional().describe('ID of the medical professional'),
-  professionalName: z.string().optional().describe('Name of the medical professional'),
-  datetime: z.string().optional().describe('Appointment date and time in ISO format'),
+  datetime: z.string().describe('Appointment date and time in ISO format'),
+  professionalId: z.number().describe('ID of the medical professional'),
+  professionalName: z.string().describe('Name of the medical professional'),
   patientName: z.string().optional().describe('Patient name extracted from question'),
   reason: z.string().optional().describe('Reason for appointment (for scheduling)'),
 });

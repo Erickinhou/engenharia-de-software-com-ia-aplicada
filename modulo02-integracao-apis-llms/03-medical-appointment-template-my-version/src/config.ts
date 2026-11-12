@@ -2,6 +2,7 @@ export type ModelConfig = {
   apiKey: string;
   httpReferer: string;
   xTitle: string;
+  baseUrl: string;
 
   provider: {
     sort: {
@@ -20,10 +21,11 @@ export const config: ModelConfig = {
   apiKey: process.env.OPENROUTER_API_KEY!,
   httpReferer: '',
   xTitle: 'IA Devs - Prompt Chaining Article Generator',
+  baseUrl: 'https://openrouter.ai/api/v1',
   models: [
     // 'qwen/qwen3-coder-next',
     // https://openrouter.ai/models?fmt=cards&max_price=0&order=throughput-high-to-low&supported_parameters=structured_outputs%2Cresponse_format
-    'upstage/solar-pro-3:free',
+    "baidu/ernie-5.5-flash-preview:free",
   ],
   provider: {
     sort: {
